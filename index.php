@@ -11,8 +11,12 @@
 </head>
 
 <body>
-  <?php require './assets/php/components/sidebar.php' ?>
-  <main></main>
+  <div class="d-flex flex-row w-100 vh-100">
+    <?php require './assets/php/components/sidebar.php' ?>
+    <main>
+      <a href="./assets/php/pages/login.php">login</a>
+    </main>
+  </div>
 </body>
 
 </html>

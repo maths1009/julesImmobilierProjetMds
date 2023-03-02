@@ -1,2 +1,10 @@
 $primary: #004F71;
 $secondary: #FFC72C;
+
+.bg-primary{
+    background: $primary;
+}
+
+.bg-secondary{
+    background: $secondary;
+}

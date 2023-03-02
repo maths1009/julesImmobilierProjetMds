@@ -1,3 +1,11 @@
+.bg-primary {
+  background: #004F71;
+}
+
+.bg-secondary {
+  background: #FFC72C;
+}
+
 .btn-primary {
   background-color: #004F71;
   color: #FFC72C;
