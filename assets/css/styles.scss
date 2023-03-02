@@ -8,53 +8,16 @@ body {
   color: $primary;
 }
 
-a {
-  text-decoration: none;
+.bg-login{
+    background-image: url("../images/background1.png");
 }
 
-.nav-link {
-  color: $primary;
-  padding: 0;
+.mw-30{
+    max-width: 30%;
 }
 
-.nav-link:focus,
-.nav-link:hover {
-  color: $primary;
-}
-
-.nav {
-  .activeNav {
-    background-color: $bg;
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    position: relative;
-    svg {
-      fill: $secondary;
-    }
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 10px;
-      height: 100%;
-      background-color: $secondary;
-      border-top-right-radius: 1rem;
-      border-bottom-right-radius: 1rem;
-    }
+.btn-primary {
+    background-color: #004f71;
+    color: $tertiary;
+    border: #004f71;
   }
-  hr {
-    margin: 3rem auto;
-    width: 70%;
-  }
-  svg {
-    width: 24px;
-    height: 24px;
-  }
-  .logout {
-    color: $alert;
-    svg {
-      fill: $alert;
-    }
-  }
-}

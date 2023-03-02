@@ -5,8 +5,16 @@ $quinary: #252525;
 $bg: #fbfbfb;
 $alert: #ff0000;
 
-.bg-primary {
-  background: $primary;
+.primary{
+    color: $primary;
+}
+
+.secondary{
+    color: $secondary;
+}
+
+.bg-primary{
+    background: $primary;
 }
 
 .bg-secondary {
