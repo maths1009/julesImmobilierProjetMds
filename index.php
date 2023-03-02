@@ -12,9 +12,9 @@
 
 <body>
   <div class="d-flex flex-row w-100 vh-100">
-    <?php require './assets/php/components/sidebar.php' ?>
+    <?php require './components/sidebar.php' ?>
     <main>
-      <a href="./assets/php/pages/login.php">login</a>
+      <a href="login.php">login</a>
     </main>
   </div>
 </body>

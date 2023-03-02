@@ -1,3 +1,11 @@
+.primary {
+  color: #004f71;
+}
+
+.secondary {
+  color: #ffc72c;
+}
+
 .bg-primary {
   background: #004f71;
 }
@@ -19,4 +27,18 @@
 
 body {
   height: 100vh;
+}
+
+.bg-login {
+  background-image: url("../images/background1.png");
+}
+
+.mw-30 {
+  max-width: 30%;
+}
+
+.btn-primary {
+  background-color: #004f71;
+  color: rgba(244, 244, 244, 0.9568627451);
+  border: #004f71;
 }/*# sourceMappingURL=styles.css.map */
