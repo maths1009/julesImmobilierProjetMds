@@ -1,2 +1,60 @@
-@import './_variables.scss';
-@import './components/buttons';
+@import "./_variables.scss";
+@import "./components/buttons";
+
+body {
+  height: 100vh;
+  background-color: $bg;
+  font-family: "open sans", sans-serif;
+  color: $primary;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-link {
+  color: $primary;
+  padding: 0;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  color: $primary;
+}
+
+.nav {
+  .activeNav {
+    background-color: $bg;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    position: relative;
+    svg {
+      fill: $secondary;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 10px;
+      height: 100%;
+      background-color: $secondary;
+      border-top-right-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
+  }
+  hr {
+    margin: 3rem auto;
+    width: 70%;
+  }
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+  .logout {
+    color: $alert;
+    svg {
+      fill: $alert;
+    }
+  }
+}
