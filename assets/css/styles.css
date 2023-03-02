@@ -1,20 +1,20 @@
 .bg-primary {
-  background: #004F71;
+  background: #004f71;
 }
 
 .bg-secondary {
-  background: #FFC72C;
+  background: #ffc72c;
 }
 
 .btn-primary {
-  background-color: #004F71;
-  color: #FFC72C;
-  border: #004F71;
+  background-color: #004f71;
+  color: #ffc72c;
+  border: #004f71;
 }
 .btn-primary:hover {
-  background-color: #FFC72C;
-  color: #004F71;
-  border: #FFC72C;
+  background-color: #ffc72c;
+  color: #004f71;
+  border: #ffc72c;
 }
 
 body {
