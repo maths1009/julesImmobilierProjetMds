@@ -53,6 +53,14 @@ class dbGestion
         return $result;
     }
 
+    public function select($select, $condition)
+    {
+        $result = $this->mysqli->prepare("SELECT " . $select . " FROM " . $this->dbTable . " WHERE " . $condition);
+        $result->execute();
+        $this->disconnect($this->mysqli);
+        return $result;
+    }
+
     /**
      * It deletes a record from the database
      * 
