@@ -58,7 +58,7 @@ class dbGestion
         $key = array_keys($condition);
         $value = array_values($condition);
         $string = "";
-        for ($i = 1; $i < count($condition); $i++) {
+        for ($i = 0; $i < count($condition); $i++) {
             $string .= $key[$i] . "= ?";
             if ($i !== count($condition) - 1) {
                 $string .= " AND";

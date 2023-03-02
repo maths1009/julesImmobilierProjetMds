@@ -8,13 +8,14 @@
   <link rel="stylesheet" href="./assets/css/normalizeCSS.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
   <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 
 <body>
   <div class="d-flex flex-row w-100 vh-100">
-    <?php require './assets/php/components/sidebar.php' ?>
+    <?php require './components/sidebar.php' ?>
     <main>
-      <a href="./assets/php/pages/login.php">login</a>
+      <a href="login.php">login</a>
     </main>
   </div>
 </body>
