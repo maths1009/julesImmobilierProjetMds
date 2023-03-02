@@ -33,6 +33,10 @@ body {
   color: #004f71;
 }
 
+a {
+  text-decoration: none;
+}
+
 .nav-link {
   color: #004f71;
   padding: 0;
@@ -68,6 +72,12 @@ body {
   width: 70%;
 }
 .nav svg {
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
+}
+.nav .logout {
+  color: #ff0000;
+}
+.nav .logout svg {
+  fill: #ff0000;
 }/*# sourceMappingURL=styles.css.map */

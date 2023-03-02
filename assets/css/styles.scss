@@ -8,6 +8,10 @@ body {
   color: $primary;
 }
 
+a {
+  text-decoration: none;
+}
+
 .nav-link {
   color: $primary;
   padding: 0;
@@ -44,7 +48,13 @@ body {
     width: 70%;
   }
   svg {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
+  }
+  .logout {
+    color: $alert;
+    svg {
+      fill: $alert;
+    }
   }
 }
