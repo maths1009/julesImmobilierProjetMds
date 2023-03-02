@@ -55,7 +55,17 @@ class dbGestion
 
     public function select($select, $condition)
     {
-        $result = $this->mysqli->prepare("SELECT " . $select . " FROM " . $this->dbTable . " WHERE " . $condition);
+        $key = array_keys($condition);
+        $value = array_values($condition);
+        $string = "";
+        for ($i = 1; $i < count($condition); $i++) {
+            $string .= $key[$i] . "= ?";
+            if ($i !== count($condition) - 1) {
+                $string .= ", ";
+            }
+        }
+        $result = $this->mysqli->prepare("SELECT " . $select . " FROM " . $this->dbTable . " WHERE " . $string);
+        $this->mysqli->bind_param(str_repeat('s', count($value)), ...$value);
         $result->execute();
         $this->disconnect($this->mysqli);
         return $result;
