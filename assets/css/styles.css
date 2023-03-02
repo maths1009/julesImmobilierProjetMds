@@ -1,10 +1,14 @@
 .btn-primary {
-  background-color: red;
-  color: green;
-  border: red;
+  background-color: #004F71;
+  color: #FFC72C;
+  border: #004F71;
 }
 .btn-primary:hover {
-  background-color: green;
-  color: red;
-  border: green;
+  background-color: #FFC72C;
+  color: #004F71;
+  border: #FFC72C;
+}
+
+body {
+  height: 100vh;
 }/*# sourceMappingURL=styles.css.map */
