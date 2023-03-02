@@ -61,11 +61,11 @@ class dbGestion
         for ($i = 1; $i < count($condition); $i++) {
             $string .= $key[$i] . "= ?";
             if ($i !== count($condition) - 1) {
-                $string .= ", ";
+                $string .= " AND";
             }
         }
         $result = $this->mysqli->prepare("SELECT " . $select . " FROM " . $this->dbTable . " WHERE " . $string);
-        $this->mysqli->bind_param(str_repeat('s', count($value)), ...$value);
+        $result->bind_param(str_repeat('s', count($value)), ...$value);
         $result->execute();
         $this->disconnect($this->mysqli);
         return $result;
@@ -99,9 +99,9 @@ class dbGestion
                 $string .= ", ";
             }
         }
-        $this->mysqli->prepare("UPDATE " . $this->dbTable . " SET " . $string . " WHERE id = " . $value[0]);
-        $this->mysqli->bind_param(str_repeat('s', count($value)), ...$value);
-        $this->mysqli->execute();
+        $result = $this->mysqli->prepare("UPDATE " . $this->dbTable . " SET " . $string . " WHERE id = " . $value[0]);
+        $result->bind_param(str_repeat('s', count($value)), ...$value);
+        $result->execute();
         $this->disconnect($this->mysqli);
     }
 
@@ -119,9 +119,9 @@ class dbGestion
                 $values .= ", ";
             }
         }
-        $this->mysqli->prepare("INSERT INTO " . $this->dbTable . "(" . implode(', ', array_keys($array))  . ") VALUES(" . $values . ")");
-        $this->mysqli->bind_param(str_repeat('s', count($array)), ...array_values($array));
-        $this->mysqli->execute();
+        $result = $this->mysqli->prepare("INSERT INTO " . $this->dbTable . "(" . implode(', ', array_keys($array))  . ") VALUES(" . $values . ")");
+        $result->bind_param(str_repeat('s', count($array)), ...array_values($array));
+        $result->execute();
         $this->disconnect($this->mysqli);
     }
 }
