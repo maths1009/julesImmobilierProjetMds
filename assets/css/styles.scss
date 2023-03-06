@@ -91,28 +91,27 @@ a {
 }
 
 .nav-header {
-
   margin-top: 50px;
   margin-right: 50px;
 
-    a{
-  color:$primary;
-} 
+  a {
+    color: $primary;
+  }
 
-    svg{
-      width: 24px;
-      height: 24px;
-    }
+  svg {
+    width: 24px;
+    height: 24px;
+  }
 
-    input{
-      border: none;
-      width: 110px;
-      background-color: $bg;
-    }
+  input {
+    border: none;
+    width: 110px;
+    background-color: $bg;
+  }
 
-    input::placeholder{
-      color: #B6B6B6;
-    }
+  input::placeholder {
+    color: #b6b6b6;
+  }
 }
 
 /* ----- PAGE SUIVI DES AGENTS ----- */

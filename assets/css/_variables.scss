@@ -6,8 +6,13 @@ $senary: #B6B6B6;
 $bg: #fbfbfb;
 $alert: #ff0000;
 
-.bg-primary {
-  background: $primary;
+.btn-primary {
+  background-color: $primary;
+  color: $tertiary;
+  &:hover {
+    background-color: $secondary;
+    color: $primary;
+  }
 }
 
 .bg-secondary {
