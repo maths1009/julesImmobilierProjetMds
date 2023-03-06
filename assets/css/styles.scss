@@ -99,3 +99,24 @@ a {
     }
 }
 
+/* ----- PAGE SUIVI DES AGENTS ----- */
+
+.container__suivi {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 0 50px;
+
+  h3 {
+    color: $sexary;
+    font-size: 1rem;
+  }
+
+  .content__card {
+    background: $tertiary;
+    border: 1px solid #F4F4F4;
+    border-radius: 30px;
+  }
+
+
+}

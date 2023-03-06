@@ -15,6 +15,14 @@
   margin-bottom: 50px;
 }
 
+.text-primary {
+  color: #004f71 !important;
+}
+
+.text-secondary {
+  color: #ffc72c !important;
+}
+
 .btn-primary {
   background-color: #004f71;
   color: #ffc72c;
@@ -117,4 +125,21 @@ a {
 }
 .nav-header input::placeholder {
   color: #B6B6B6;
+}
+
+/* ----- PAGE SUIVI DES AGENTS ----- */
+.container__suivi {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 0 50px;
+}
+.container__suivi h3 {
+  color: #B6B6B6;
+  font-size: 1rem;
+}
+.container__suivi .content__card {
+  background: white;
+  border: 1px solid #F4F4F4;
+  border-radius: 30px;
 }/*# sourceMappingURL=styles.css.map */
