@@ -16,10 +16,6 @@ body {
   color: $primary;
 }
 
-main {
-  padding: 50px;
-}
-
 p,
 h2 {
   margin-bottom: 0;
@@ -91,9 +87,6 @@ a {
 }
 
 .nav-header {
-  margin-top: 50px;
-  margin-right: 50px;
-
   a {
     color: $primary;
   }
