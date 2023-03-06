@@ -1,11 +1,3 @@
-.primary {
-  color: #004f71;
-}
-
-.secondary {
-  color: #ffc72c;
-}
-
 .bg-primary {
   background: #004f71;
 }
@@ -39,20 +31,6 @@ body {
   background-color: #fbfbfb;
   font-family: "open sans", sans-serif;
   color: #004f71;
-}
-
-.bg-login {
-  background-image: url("../images/background1.png");
-}
-
-.mw-30 {
-  max-width: 30%;
-}
-
-.btn-primary {
-  background-color: #004f71;
-  color: white;
-  border: #004f71;
 }
 
 a {
