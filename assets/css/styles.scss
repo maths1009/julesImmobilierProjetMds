@@ -1,6 +1,14 @@
 @import "./_variables.scss";
 @import "./components/buttons";
 
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   height: 100vh;
   background-color: $bg;
@@ -8,11 +16,20 @@ body {
   color: $primary;
 }
 
-.bg-login{
+main {
+  padding: 50px;
+}
+
+p,
+h2 {
+  margin-bottom: 0;
+}
+
+.bg-login {
   background-image: url("../img/background.png");
 }
 
-.mw-30{
+.mw-30 {
   max-width: 30%;
 }
 
@@ -21,7 +38,6 @@ body {
   color: $tertiary;
   border: #004f71;
 }
-
 
 a {
   text-decoration: none;
@@ -71,5 +87,29 @@ a {
     svg {
       fill: $alert;
     }
+  }
+}
+
+.nav-header {
+  margin-top: 50px;
+  margin-right: 50px;
+
+  a {
+    color: $primary;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  input {
+    border: none;
+    width: 110px;
+    background-color: $bg;
+  }
+
+  input::placeholder {
+    color: #b6b6b6;
   }
 }
