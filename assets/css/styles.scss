@@ -103,53 +103,14 @@ a {
     height: 24px;
   }
 
+    textarea {
+      height: 15vh;
+    }
+  }
   input {
     border: none;
     width: 110px;
     background-color: $bg;
-  }
-
-  input::placeholder {
-    color: #b6b6b6;
-  }
-}
-
-/* ----- PAGE SUIVI DES AGENTS ----- */
-
-.container__suivi {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 88vh;
-  padding: 0 50px;
-
-  h3 {
-    color: $senary;
-    font-size: 1rem;
-  }
-
-  p {
-    color: $quinary;
-    margin: 0;
-  }
-
-  .content__card {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem 2rem;
-    gap: 1rem;
-    background: $tertiary;
-    border: 1px solid #F4F4F4;
-
-    span {
-      display: flex;
-      justify-content: space-between;
-      gap: 5%;
-    }
-
-    textarea {
-      height: 15vh;
-    }
   }
 
   .content__send {
@@ -158,6 +119,9 @@ a {
     button {
       width: 22rem;
     }
+  }
+  input::placeholder {
+    color: #b6b6b6;
   }
 }
 
