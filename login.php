@@ -1,9 +1,7 @@
 <?php
-session_start();
-include_once("./classes/dd.php");
+include_once("./config.php");
 // include_once("../classes/dbGestion.php");
 // $connect = new dbGestion("julesimmo", "users");
-$debug = new DdService();
 $mysqli = new mysqli("localhost", "root", "root", "julesimmo");
 
 // Get user connect
@@ -19,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
     $result = $stmt->get_result();
     $verif = $result->fetch_assoc();
     if (isset($verif)) {
+        $_SESSION['user'] = $verif;
         header('Location: http://localhost:8888/julesImmobilierProjetMds/index.php');
     } else {
         $_SESSION['status'] = "L'email ou le mot de passe est invalide !";
