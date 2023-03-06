@@ -34,11 +34,28 @@
   border: #ffc72c;
 }
 
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   height: 100vh;
   background-color: #fbfbfb;
   font-family: "open sans", sans-serif;
   color: #004f71;
+}
+
+main {
+  padding: 50px;
+}
+
+p,
+h2 {
+  margin-bottom: 0;
 }
 
 .bg-login {
