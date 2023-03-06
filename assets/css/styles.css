@@ -73,6 +73,10 @@ body {
   color: #004f71;
 }
 
+main {
+  padding: 50px;
+}
+
 p,
 h2 {
   margin-bottom: 0;
