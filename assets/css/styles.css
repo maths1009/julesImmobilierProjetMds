@@ -94,4 +94,27 @@ a {
 }
 .nav .logout svg {
   fill: #ff0000;
+}
+
+.nav-header {
+  margin-top: 50px;
+  margin-right: 50px;
+}
+.nav-header a {
+  color: #004f71;
+}
+.nav-header svg {
+  width: 24px;
+  height: 24px;
+}
+.nav-header input {
+  border: none;
+  width: 110px;
+  background-color: #fbfbfb;
+}
+.nav-header input::-moz-placeholder {
+  color: #B6B6B6;
+}
+.nav-header input::placeholder {
+  color: #B6B6B6;
 }/*# sourceMappingURL=styles.css.map */
