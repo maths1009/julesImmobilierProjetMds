@@ -1,5 +1,10 @@
-.bg-primary {
-  background: #004f71;
+.btn-primary {
+  background-color: #004f71;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #ffc72c;
+  color: #004f71;
 }
 
 .bg-secondary {
@@ -138,8 +143,8 @@ a {
   background-color: #fbfbfb;
 }
 .nav-header input::-moz-placeholder {
-  color: #B6B6B6;
+  color: #b6b6b6;
 }
 .nav-header input::placeholder {
-  color: #B6B6B6;
+  color: #b6b6b6;
 }/*# sourceMappingURL=styles.css.map */
