@@ -54,10 +54,6 @@ body {
   color: #004f71;
 }
 
-main {
-  padding: 50px;
-}
-
 p,
 h2 {
   margin-bottom: 0;
@@ -126,10 +122,6 @@ a {
   fill: #ff0000;
 }
 
-.nav-header {
-  margin-top: 50px;
-  margin-right: 50px;
-}
 .nav-header a {
   color: #004f71;
 }
