@@ -36,6 +36,9 @@
 
 body {
   height: 100vh;
+  background-color: #fbfbfb;
+  font-family: "open sans", sans-serif;
+  color: #004f71;
 }
 
 .bg-login {
@@ -48,6 +51,55 @@ body {
 
 .btn-primary {
   background-color: #004f71;
-  color: rgba(244, 244, 244, 0.9568627451);
+  color: white;
   border: #004f71;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-link {
+  color: #004f71;
+  padding: 0;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  color: #004f71;
+}
+
+.nav .activeNav {
+  background-color: #fbfbfb;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  position: relative;
+}
+.nav .activeNav svg {
+  fill: #ffc72c;
+}
+.nav .activeNav::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 100%;
+  background-color: #ffc72c;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.nav hr {
+  margin: 3rem auto;
+  width: 70%;
+}
+.nav svg {
+  width: 24px;
+  height: 24px;
+}
+.nav .logout {
+  color: #ff0000;
+}
+.nav .logout svg {
+  fill: #ff0000;
 }/*# sourceMappingURL=styles.css.map */
