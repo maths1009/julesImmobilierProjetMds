@@ -1,3 +1,31 @@
+<?php
+session_start();
+include_once("./classes/dd.php");
+// include_once("../classes/dbGestion.php");
+// $connect = new dbGestion("julesimmo", "users");
+$debug = new DdService();
+$mysqli = new mysqli("localhost", "root", "root", "julesimmo");
+
+// Get user connect
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
+    $email = $_POST["email"];
+    $password = hash('sha256', $_POST["password"]);
+
+    $stmt = $mysqli->prepare('SELECT * FROM users WHERE email = ? AND password = ?');
+    $stmt->bind_param('ss', $email, $password);
+
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+    $verif = $result->fetch_assoc();
+    if (isset($verif)) {
+        header('Location: http://localhost:8888/julesImmobilierProjetMds/index.php');
+    } else {
+        $_SESSION['status'] = "L'email ou le mot de passe est invalide !";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -12,27 +40,36 @@
 </head>
 
 <body>
-    <main>
-        <form class="vh-100 bg-primary">
-            <div class="container py-5 h-100">
-                <div class="row d-flex justify-content-center align-items-center h-100">
+    <main class="bg-login">
+        <form class="vh-100" action="" method="POST">
+
+            <?php if (isset($_SESSION['status'])) { ?>
+                <div class="alert alert-danger position-fixed start-50 translate-middle-x mt-5" role="alert">
+                    <?php echo ($_SESSION['status']); ?>
+                </div>
+            <?php unset($_SESSION['status']);
+            } ?>
+
+            <div class="container h-100 primary">
+                <div class="row d-flex justify-content-center align-items-center h-100 flex-column gap-5">
+                    <img class="mw-30" src="./assets/img/logo.svg" alt="">
                     <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                         <div class="card shadow-2-strong" style="border-radius: 1rem;">
                             <div class="card-body p-5 text-center">
 
-                                <h3 class="mb-5">Bienvenu chez Jules Immo</h3>
+                                <h3 class="mb-5 fs-2">Bienvenue chez Jules Immobilier</h3>
 
-                                <div class="form-outline mb-4">
-                                    <input type="email" id="typeEmailX-2" class="form-control form-control-lg" />
-                                    <label class="form-label" for="typeEmailX-2">Email</label>
+                                <div class="form-outline mb-4 d-flex flex-column align-items-start fs-4">
+                                    <label class="form-label" for="email">Email</label>
+                                    <input type="email" name="email" id="email" class="form-control form-control-lg" />
                                 </div>
 
-                                <div class="form-outline mb-4">
-                                    <input type="password" id="typePasswordX-2" class="form-control form-control-lg" />
-                                    <label class="form-label" for="typePasswordX-2">Mot de passe</label>
+                                <div class="form-outline mb-4 d-flex flex-column align-items-start fs-4">
+                                    <label class="form-label" for="password">Mot de passe</label>
+                                    <input type="password" name="password" id="password" class="form-control form-control-lg" />
                                 </div>
 
-                                <button class="btn btn-primary btn-lg btn-block" type="submit">connexion</button>
+                                <button class="btn btn-primary btn-lg btn-block" type="submit" name="login">connexion</button>
 
                             </div>
                         </div>
@@ -42,5 +79,3 @@
         </form>
     </main>
 </body>
-
-</html>
