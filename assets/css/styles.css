@@ -15,6 +15,14 @@
   margin-bottom: 50px;
 }
 
+.text-primary {
+  color: #004f71 !important;
+}
+
+.text-secondary {
+  color: #ffc72c !important;
+}
+
 .btn-primary {
   background-color: #004f71;
   color: #ffc72c;
@@ -26,11 +34,28 @@
   border: #ffc72c;
 }
 
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   height: 100vh;
   background-color: #fbfbfb;
   font-family: "open sans", sans-serif;
   color: #004f71;
+}
+
+main {
+  padding: 50px;
+}
+
+p,
+h2 {
+  margin-bottom: 0;
 }
 
 .bg-login {
