@@ -131,7 +131,7 @@ a {
 .container__suivi {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 2rem;
   padding: 0 50px;
 }
 .container__suivi h3 {
@@ -139,7 +139,22 @@ a {
   font-size: 1rem;
 }
 .container__suivi .content__card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 1rem;
   background: white;
   border: 1px solid #F4F4F4;
-  border-radius: 30px;
+  border-radius: 15px;
+}
+.container__suivi .content__card span {
+  display: flex;
+  justify-content: space-between;
+  gap: 5%;
+}
+.container__suivi .content__card textarea {
+  height: 150px;
+}
+.container__suivi .content__send {
+  text-align: center;
 }/*# sourceMappingURL=styles.css.map */

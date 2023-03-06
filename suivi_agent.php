@@ -16,30 +16,30 @@ include './components/head.php';
             <div class="content__card content__agent">
                 <h2>Agent immobilier :</h2>
                 <span class="agent_fullname">
-                    <input type="text" id="agent_lastname" name="agent_lastname" required placeholder="Nom">
-                    <input type="text" id="agent_firstname" name="agent_firstname" required placeholder="Prénom">
+                    <input type="text" id="agent_lastname" class="form-control" name="agent_lastname" required placeholder="Nom">
+                    <input type="text" id="agent_firstname" class="form-control" name="agent_firstname" required placeholder="Prénom">
                 </span>
                 <span class="date_rdv">
-                    <input type="date" id="date" name="date" required>
-                    <input type="number" id="nbclients" name="nbclients" required min="0" placeholder="Nombre de clients vus">
+                    <input type="date" id="date" class="form-control" name="date" required>
+                    <input type="number" id="nbclients" class="form-control" name="nbclients" required min="0" placeholder="Nombre de clients vus">
                 </span>
             </div>
 
             <div class="content__card content__client">
-                <h2>Agent immobilier :</h2>
+                <h2>Rendez-vous client :</h2>
                 <span class="client_fullname">
-                    <input type="text" id="client_lastname" name="client_lastname" required placeholder="Nom du client">
-                    <input type="text" id="client_firstname" name="client_firstname" required placeholder="Prénom du client">
+                    <input type="text" id="client_lastname" class="form-control" name="client_lastname" required placeholder="Nom du client">
+                    <input type="text" id="client_firstname" class="form-control" name="client_firstname" required placeholder="Prénom du client">
                 </span>
                 <span class="client_addr">
-                    <input type="text" id="client_addr" name="client_addr" require placeholder="Adresse du rendez-vous">
+                    <input type="text" id="client_addr" class="form-control" name="client_addr" require placeholder="Adresse du rendez-vous">
                 </span>
                 <span class="heure_rdv">
-                    <input type="datetime-local" id="time_start" name="time_start" required>
-                    <input type="datetime-local" id="time_finish" name="time_finish" required>
+                    <input type="datetime-local" id="time_start" class="form-control" name="time_start" required>
+                    <input type="datetime-local" id="time_finish" class="form-control" name="time_finish" required>
                 </span>
                 <span class="client_com">
-                    <textarea id="commentaires" name="commentaires">Commentaires sur le rendez-vous</textarea>
+                    <textarea id="commentaires" class="form-control" name="commentaires" placeholder="Commentaires sur le rendez-vous"></textarea>
                 </span>
             </div>
 
