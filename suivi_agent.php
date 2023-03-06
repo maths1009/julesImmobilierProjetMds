@@ -13,7 +13,7 @@ include './components/head.php';
                 <h3>Agent immobilier</h3>
             </div>
 
-            <div class="content__card content__agent">
+            <div class="content__card content__agent rounded-3">
                 <h2>Agent immobilier :</h2>
                 <span class="agent_fullname">
                     <input type="text" id="agent_lastname" class="form-control" name="agent_lastname" required placeholder="Nom">
@@ -25,7 +25,7 @@ include './components/head.php';
                 </span>
             </div>
 
-            <div class="content__card content__client">
+            <div class="content__card content__client rounded-3">
                 <h2>Rendez-vous client :</h2>
                 <span class="client_fullname">
                     <input type="text" id="client_lastname" class="form-control" name="client_lastname" required placeholder="Nom du client">

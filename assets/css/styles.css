@@ -131,21 +131,25 @@ a {
 .container__suivi {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  justify-content: space-between;
+  height: 88vh;
   padding: 0 50px;
 }
 .container__suivi h3 {
   color: #B6B6B6;
   font-size: 1rem;
 }
+.container__suivi p {
+  color: #252525;
+  margin: 0;
+}
 .container__suivi .content__card {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: 1rem 2rem;
   gap: 1rem;
   background: white;
   border: 1px solid #F4F4F4;
-  border-radius: 15px;
 }
 .container__suivi .content__card span {
   display: flex;
@@ -153,11 +157,19 @@ a {
   gap: 5%;
 }
 .container__suivi .content__card textarea {
-  height: 150px;
+  height: 15vh;
 }
 .container__suivi .content__send {
   text-align: center;
 }
 .container__suivi .content__send button {
   width: 22rem;
+}
+
+.container__rdv .content__card span {
+  justify-content: flex-start;
+}
+.container__rdv .content__card span div {
+  display: flex;
+  width: 40%;
 }/*# sourceMappingURL=styles.css.map */
