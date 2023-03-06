@@ -157,4 +157,7 @@ a {
 }
 .container__suivi .content__send {
   text-align: center;
+}
+.container__suivi .content__send button {
+  width: 22rem;
 }/*# sourceMappingURL=styles.css.map */
