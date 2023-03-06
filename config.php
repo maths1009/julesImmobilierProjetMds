@@ -1,4 +1,5 @@
 <?php
+session_start();
 /* Defining the constant SITE_ROOT to the directory of the current file. */
 define("SITE_ROOT", dirname(__FILE__));
 
