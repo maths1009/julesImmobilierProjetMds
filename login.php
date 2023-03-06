@@ -2,7 +2,7 @@
 include_once("./config.php");
 // include_once("../classes/dbGestion.php");
 // $connect = new dbGestion("julesimmo", "users");
-$mysqli = new mysqli("localhost", "root", "", "julesimmo");
+$mysqli = new mysqli("localhost", "root", "root", "julesimmo");
 
 // Get user connect
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
