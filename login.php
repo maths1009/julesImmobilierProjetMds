@@ -79,6 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
         </form>
     </main>
 </body>
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -123,5 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
         </form>
     </main>
 </body>
+=======
+>>>>>>> Tom
 
 </html>
