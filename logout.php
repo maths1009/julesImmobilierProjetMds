@@ -1,3 +1,7 @@
 <?php
+require_once './config.php';
 
-echo 'tets';
+$_SESSION = array();
+session_destroy();
+header('Location: ./login.php');
+exit;

@@ -11,6 +11,10 @@
   background: #ffc72c;
 }
 
+.bg-tertiary {
+  background: white;
+}
+
 .bg-sidebard {
   background-color: white;
 }
@@ -26,6 +30,10 @@
 
 .text-secondary {
   color: #ffc72c !important;
+}
+
+.text-senary {
+  color: #b6b6b6;
 }
 
 .btn-primary {
@@ -45,6 +53,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  border-radius: 4em;
+  background-color: #fbfbfb;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #b6b6b6;
+  border-radius: 4em;
 }
 
 body {
@@ -186,4 +205,25 @@ a {
 .container__rdv .content__card span div {
   display: flex;
   width: 40%;
+  color: #b6b6b6;
+}
+
+.containerMain {
+  height: calc(100% - 6rem);
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 1.5rem;
+  overflow: auto;
+}
+table thead tr th {
+  padding-bottom: 1rem;
+  border-bottom: #f4f4f4 solid 1px;
+  color: #b6b6b6;
+  font-weight: 500;
+  text-align: left;
+}
+table tbody tr td {
+  text-align: left;
 }/*# sourceMappingURL=styles.css.map */

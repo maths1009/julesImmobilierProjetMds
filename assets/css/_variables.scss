@@ -2,7 +2,7 @@ $primary: #004f71;
 $secondary: #ffc72c;
 $tertiary: #ffff;
 $quinary: #252525;
-$senary: #B6B6B6;
+$senary: #b6b6b6;
 $bg: #fbfbfb;
 $alert: #ff0000;
 
@@ -17,6 +17,10 @@ $alert: #ff0000;
 
 .bg-secondary {
   background: $secondary;
+}
+
+.bg-tertiary {
+  background: $tertiary;
 }
 
 .bg-sidebard {
@@ -34,4 +38,8 @@ $alert: #ff0000;
 
 .text-secondary {
   color: $secondary !important;
+}
+
+.text-senary {
+  color: $senary;
 }
