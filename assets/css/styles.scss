@@ -9,6 +9,17 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 0.5rem;
+  border-radius: 4em;
+  background-color: $bg;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $senary;
+  border-radius: 4em;
+}
+
 body {
   height: 100vh;
   background-color: $bg;
@@ -104,5 +115,33 @@ a {
 
   input::placeholder {
     color: #b6b6b6;
+  }
+}
+
+.containerMain {
+  height: calc(100% - 3rem * 2);
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 1.5rem;
+  overflow: auto;
+  thead {
+    tr {
+      th {
+        padding-bottom: 1rem;
+        border-bottom: #f4f4f4 solid 1px;
+        text-align: left;
+        color: $senary;
+        font-weight: 500;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        text-align: left;
+      }
+    }
   }
 }
