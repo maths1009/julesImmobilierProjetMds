@@ -158,9 +158,13 @@ input {
   background-color: #fbfbfb;
 }
 
+input {
+  border: none;
+  width: 110px;
+  background-color: #fbfbfb;
+}
+
 input::-moz-placeholder {
-  color: #b6b6b6;
-.nav-header input::-moz-placeholder {
   color: #b6b6b6;
 }
 
@@ -213,6 +217,14 @@ input::placeholder {
   width: 22rem;
 }
 
+input::-moz-placeholder {
+  color: #b6b6b6;
+}
+
+input::placeholder {
+  color: #b6b6b6;
+}
+
 .container__rdv .content__card span {
   justify-content: flex-start;
 }
@@ -223,24 +235,6 @@ input::placeholder {
 
 .containerMain {
   height: calc(100% - 6rem);
-}
-
-table {
-  border-collapse: separate;
-  border-spacing: 0 1.5rem;
-  overflow: auto;
-}
-table thead tr th {
-  padding-bottom: 1rem;
-  border-bottom: #f4f4f4 solid 1px;
-  text-align: left;
-  color: #b6b6b6;
-  font-weight: 500;
-}
-table tbody tr td {
-  text-align: left;
-.nav-header input::placeholder {
-  color: #b6b6b6;
 }
 
 .containerMain {

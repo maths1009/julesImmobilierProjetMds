@@ -116,11 +116,11 @@ input {
   width: 110px;
   background-color: $bg;
 }
-  input {
-    border: none;
-    width: 110px;
-    background-color: $bg;
-  }
+input {
+  border: none;
+  width: 110px;
+  background-color: $bg;
+}
 
 input::placeholder {
   color: #b6b6b6;
@@ -170,9 +170,8 @@ input::placeholder {
     }
   }
 }
-  input::placeholder {
-    color: #b6b6b6;
-  }
+input::placeholder {
+  color: #b6b6b6;
 }
 
 .container__rdv {
@@ -192,19 +191,6 @@ input::placeholder {
   height: calc(100% - 3rem * 2);
 }
 
-table {
-  border-collapse: separate;
-  border-spacing: 0 1.5rem;
-  overflow: auto;
-  thead {
-    tr {
-      th {
-        padding-bottom: 1rem;
-        border-bottom: #f4f4f4 solid 1px;
-        text-align: left;
-        color: $senary;
-        font-weight: 500;
-      }
 table {
   border-collapse: separate;
   border-spacing: 0 1.5rem;
