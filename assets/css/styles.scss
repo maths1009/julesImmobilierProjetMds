@@ -40,6 +40,12 @@ h2 {
   max-width: 30%;
 }
 
+.btn-delete {
+  background-color: $alert;
+  color: $tertiary;
+  border: $alert;
+}
+
 .btn-primary {
   background-color: #004f71;
   color: $tertiary;
@@ -248,4 +254,8 @@ table {
   
   .containerMain{
     height: calc(100% - 3rem *2);
+  }
+
+  .modal{
+    display: none;
   }

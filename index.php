@@ -43,6 +43,13 @@ $totalClients = $result->fetch_assoc();
     <?php require './components/sidebar.php' ?>
     <div class="w-100 m-5">
       <?php require './components/header.php' ?>
+      <?php if (isset($_SESSION['status'])) { ?>
+        <div class="alert alert-success position-fixed start-50 translate-middle-x mt-5 " role="alert">
+          <?php echo ($_SESSION['status']); ?>
+        </div>
+      <?php
+        unset($_SESSION['status']);
+      } ?>
       <div class="d-flex flex-column">
         <h2 class="d-flex flex-row gap-3 fs-1 text-primary">
           <p class="fw-bold">Bienvenue,</p>
@@ -66,6 +73,7 @@ $totalClients = $result->fetch_assoc();
                     <th>Date</th>
                     <th>Adresse</th>
                     <th>Durée</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -83,6 +91,11 @@ $totalClients = $result->fetch_assoc();
                       <td><?php echo strftime('%A %e %B %Y', strtotime($meet['start_date'])); ?></td>
                       <td><?php echo utf8_encode($meet['adresse']); ?></td>
                       <td><?php echo $meet['duration']; ?></td>
+                      <td><a href="./rdv_client.php?id=<?php echo $meet['id'] ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
+                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
+                          </svg></a>
+                      </td>
                     </tr>
                   <?php };
                   $mysqli->close();
