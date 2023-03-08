@@ -1,5 +1,51 @@
 <?php
 include './components/head.php';
+require_once './config.php';
+
+$mysqli = new mysqli("localhost", "root", "root", "julesimmo");
+
+if (!$mysqli) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// get meet
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $masque = "/^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}$/";
+
+    if (isset($_POST['client_lastname'], $_POST['client_firstname'], $_POST['client_addr'], $_POST['time_start'], $_POST['time_finish']) && preg_match($masque, $_POST['client_email'])) {
+
+        $stmt = $mysqli->prepare('SELECT * FROM clients WHERE email = ?');
+        $stmt->bind_param('s', $_POST["client_email"]);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $client = $result->fetch_assoc();
+
+        if (isset($client)) {
+            $_SESSION['status'] = "Le rendez-vous à bien été ajouté !";
+        } else {
+            $stmt = $mysqli->prepare('INSERT INTO clients (name, surname, email) VALUES (?, ?, ?)');
+            $stmt->bind_param('sss', $_POST["client_firstname"], $_POST["client_lastname"], $_POST["client_email"]);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $_SESSION['status'] = "Le client a été créé et le rendez-vous à bien été ajouté !";
+        }
+
+        $stmt = $mysqli->prepare('SELECT * FROM clients WHERE email = ?');
+        $stmt->bind_param('s', $_POST["client_email"]);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $client = $result->fetch_assoc();
+
+        $stmt = $mysqli->prepare('INSERT INTO meets (user_id, client_id, adresse, start_date, end_date, comment) VALUES (?, ?, ?, ?, ?, ?)');
+        $stmt->bind_param('iissss', $_SESSION['user']['id'], $client['id'], $_POST['client_addr'], $_POST['time_start'], $_POST['time_finish'], $_POST['commentaires']);
+        $stmt->execute();
+        $result = $stmt->get_result();
+    } else {
+        $_SESSION['error'] = "Merci de remplir tout les champs";
+    }
+}
+
 ?>
 
 <body>
@@ -7,22 +53,22 @@ include './components/head.php';
         <?php require './components/sidebar.php'; ?>
         <main class="w-100 m-5">
             <?php include './components/header.php'; ?>
-            <section class="container__suivi">
+            <?php if (isset($_SESSION['error'])) { ?>
+                <div class="alert alert-danger position-fixed start-50 translate-middle-x mt-5" role="alert">
+                    <?php echo ($_SESSION['error']); ?>
+                </div>
+            <?php unset($_SESSION['error']);
+            } ?>
+            <?php if (isset($_SESSION['status'])) { ?>
+                <div class="alert alert-success position-fixed start-50 translate-middle-x mt-5" role="alert">
+                    <?php echo ($_SESSION['status']); ?>
+                </div>
+            <?php unset($_SESSION['status']);
+            } ?>
+            <form class="container__suivi" method="POST">
                 <div class="title">
                     <h1>Suivi des agents immobiliers</h1>
                     <h3>Agent immobilier</h3>
-                </div>
-
-                <div class="content__card content__agent rounded-3">
-                    <h2>Agent immobilier :</h2>
-                    <span class="agent_fullname">
-                        <input type="text" id="agent_lastname" class="form-control" name="agent_lastname" required placeholder="Nom">
-                        <input type="text" id="agent_firstname" class="form-control" name="agent_firstname" required placeholder="Prénom">
-                    </span>
-                    <span class="date_rdv">
-                        <input type="date" id="date" class="form-control" name="date" required>
-                        <input type="number" id="nbclients" class="form-control" name="nbclients" required min="0" placeholder="Nombre de clients vus">
-                    </span>
                 </div>
 
                 <div class="content__card content__client rounded-3">
@@ -33,10 +79,11 @@ include './components/head.php';
                     </span>
                     <span class="client_addr">
                         <input type="text" id="client_addr" class="form-control" name="client_addr" require placeholder="Adresse du rendez-vous">
+                        <input type="email" id="client_email" class="form-control" name="client_email" require placeholder="Email">
                     </span>
                     <span class="heure_rdv">
-                        <input type="datetime-local" id="time_start" class="form-control" name="time_start" required>
-                        <input type="datetime-local" id="time_finish" class="form-control" name="time_finish" required>
+                        <input type="text" class="form-control" name="time_start" id="time_start" placeholder="Date de début" onfocus="(this.type='datetime-local')" required />
+                        <input type="text" class="form-control" name="time_finish" id="time_finish" placeholder="Date de fin" onfocus="(this.type='datetime-local')" required />
                     </span>
                     <span class="client_com">
                         <textarea id="commentaires" class="form-control" name="commentaires" placeholder="Commentaires sur le rendez-vous"></textarea>
@@ -46,9 +93,14 @@ include './components/head.php';
                 <div class="content__send">
                     <button class="btn btn-primary btn-lg btn-block" type="submit">Envoyer le suivi</button>
                 </div>
-            </section>
+            </form>
         </main>
     </div>
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
 </body>
 
 </html>
