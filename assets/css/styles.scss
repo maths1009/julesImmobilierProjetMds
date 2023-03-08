@@ -27,10 +27,6 @@ body {
   color: $primary;
 }
 
-main {
-  padding: 50px;
-}
-
 p,
 h2 {
   margin-bottom: 0;
@@ -102,9 +98,6 @@ a {
 }
 
 .nav-header {
-  margin-top: 50px;
-  margin-right: 50px;
-
   a {
     color: $primary;
   }
@@ -221,3 +214,38 @@ table {
     }
   }
 }
+
+.nav-agents {
+
+  li  {
+    background-color: $tertiary;
+    border: 1px solid #F4F4F4;
+  }
+  
+  li:not(:first-child):before   {
+    content: "•";
+    font-weight: bold;
+    display: inline-block;
+    width: 15px;
+  }
+  
+  li:nth-child(2):before {
+    color: #E72424;
+  }
+  
+  li:nth-child(2):before {
+    color: #E72424;
+  }
+  
+  li:nth-child(3):before {
+    color: #50C83D;
+  }
+  
+  li:nth-child(4):before {
+    color: #FF922E;
+  }
+  } 
+  
+  .containerMain{
+    height: calc(100% - 3rem *2);
+  }

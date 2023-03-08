@@ -2,7 +2,7 @@
 include './components/head.php';
 require_once './config.php';
 
-$mysqli = new mysqli("localhost", "root", "", "julesimmo");
+$mysqli = new mysqli("localhost", "root", "root", "julesimmo");
 
 if (!$mysqli) {
   die("Connection failed: " . mysqli_connect_error());

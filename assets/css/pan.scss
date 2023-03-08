@@ -1,0 +1,136 @@
+@import "./_variables.scss";
+@import "./components/buttons";
+
+body {
+  height: 100vh;
+  background-color: $bg;
+  font-family: "open sans", sans-serif;
+  color: $primary;
+}
+
+.bg-login{
+  background-image: url("../img/background.png");
+}
+
+.mw-30{
+  max-width: 30%;
+}
+
+.btn-primary {
+  background-color: #004f71;
+  color: $tertiary;
+  border: #004f71;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+.nav-link {
+  color: $primary;
+  padding: 0;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  color: $primary;
+}
+
+.nav {
+  .activeNav {
+    background-color: $bg;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    position: relative;
+    svg {
+      fill: $secondary;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 10px;
+      height: 100%;
+      background-color: $secondary;
+      border-top-right-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
+  }
+  hr {
+    margin: 3rem auto;
+    width: 70%;
+  }
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+  .logout {
+    color: $alert;
+    svg {
+      fill: $alert;
+    }
+  }
+}
+
+.nav-header {
+
+  // margin-top: 50px;
+  // margin-right: 50px;
+
+    a{
+  color:$primary;
+} 
+
+    svg{
+      width: 24px;
+      height: 24px;
+    }
+
+    input{
+      border: none;
+      width: 110px;
+      background-color: $bg;
+    }
+
+    input::placeholder{
+      color: #B6B6B6;
+    }
+}
+
+.nav-agents {
+
+li  {
+  background-color: $tertiary;
+  border: 1px solid #F4F4F4;
+}
+
+li:not(:first-child):before   {
+  content: "•";
+  font-weight: bold;
+  display: inline-block;
+  width: 15px;
+}
+
+li:nth-child(2):before {
+  color: #E72424;
+}
+
+li:nth-child(2):before {
+  color: #E72424;
+}
+
+li:nth-child(3):before {
+  color: #50C83D;
+}
+
+li:nth-child(4):before {
+  color: #FF922E;
+}
+} 
+
+.containerMain{
+  margin-top: 51px;
+  height: calc(100% - 3rem *2);
+}

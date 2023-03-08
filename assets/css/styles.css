@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .btn-primary {
   background-color: #004f71;
   color: white;
@@ -71,10 +72,6 @@ body {
   background-color: #fbfbfb;
   font-family: "open sans", sans-serif;
   color: #004f71;
-}
-
-main {
-  padding: 50px;
 }
 
 p,
@@ -259,4 +256,31 @@ table thead tr th {
 }
 table tbody tr td {
   text-align: left;
+}
+
+.nav-agents li {
+  background-color: white;
+  border: 1px solid #F4F4F4;
+}
+.nav-agents li:not(:first-child):before {
+  content: "•";
+  font-weight: bold;
+  display: inline-block;
+  width: 15px;
+}
+.nav-agents li:nth-child(2):before {
+  color: #E72424;
+}
+.nav-agents li:nth-child(2):before {
+  color: #E72424;
+}
+.nav-agents li:nth-child(3):before {
+  color: #50C83D;
+}
+.nav-agents li:nth-child(4):before {
+  color: #FF922E;
+}
+
+.containerMain {
+  height: calc(100% - 6rem);
 }/*# sourceMappingURL=styles.css.map */
