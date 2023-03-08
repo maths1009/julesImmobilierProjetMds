@@ -148,28 +148,40 @@ a {
   width: 24px;
   height: 24px;
 }
-.nav-header input {
+.nav-header textarea {
+  height: 15vh;
+}
+
+input {
   border: none;
   width: 110px;
   background-color: #fbfbfb;
 }
-.nav-header input::-moz-placeholder {
+
+input::-moz-placeholder {
   color: #b6b6b6;
 }
-.nav-header input::placeholder {
-  color: #B6B6B6;
+
+input::placeholder {
+  color: #b6b6b6;
 }
 
-/* ----- PAGE SUIVI DES AGENTS ----- */
+.content__send {
+  text-align: center;
+}
+.content__send button {
+  width: 22rem;
+}
+
 .container__suivi {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 88vh;
-  padding: 0 50px;
+  padding: 0;
 }
 .container__suivi h3 {
-  color: #B6B6B6;
+  color: #b6b6b6;
   font-size: 1rem;
 }
 .container__suivi p {
@@ -182,7 +194,7 @@ a {
   padding: 1rem 2rem;
   gap: 1rem;
   background: white;
-  border: 1px solid #F4F4F4;
+  border: 1px solid #f4f4f4;
 }
 .container__suivi .content__card span {
   display: flex;
@@ -205,7 +217,6 @@ a {
 .container__rdv .content__card span div {
   display: flex;
   width: 40%;
-  color: #b6b6b6;
 }
 
 .containerMain {
@@ -220,9 +231,9 @@ table {
 table thead tr th {
   padding-bottom: 1rem;
   border-bottom: #f4f4f4 solid 1px;
+  text-align: left;
   color: #b6b6b6;
   font-weight: 500;
-  text-align: left;
 }
 table tbody tr td {
   text-align: left;

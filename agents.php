@@ -3,7 +3,7 @@ include_once("./config.php");
 include './components/head.php';
 // include_once("../classes/dbGestion.php");
 // $connect = new dbGestion("julesimmo", "users");
-$mysqli = new mysqli("localhost", "root", "root", "julesimmo");
+$mysqli = new mysqli("localhost", "root", "", "julesimmo");
 ?>
 
 <body class="d-flex flex-row">
