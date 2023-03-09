@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .btn-primary {
   background-color: #004f71;
   color: white;
@@ -9,6 +10,10 @@
 
 .bg-secondary {
   background: #ffc72c;
+}
+
+.bg-tertiary {
+  background: white;
 }
 
 .bg-sidebard {
@@ -26,6 +31,10 @@
 
 .text-secondary {
   color: #ffc72c !important;
+}
+
+.text-senary {
+  color: #b6b6b6;
 }
 
 .btn-primary {
@@ -47,15 +56,22 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 0.5rem;
+  border-radius: 4em;
+  background-color: #fbfbfb;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #b6b6b6;
+  border-radius: 4em;
+}
+
 body {
   height: 100vh;
   background-color: #fbfbfb;
   font-family: "open sans", sans-serif;
   color: #004f71;
-}
-
-main {
-  padding: 50px;
 }
 
 p,
@@ -69,6 +85,16 @@ h2 {
 
 .mw-30 {
   max-width: 30%;
+}
+
+.btn-delete {
+  background-color: #ff0000;
+  color: white;
+}
+.btn-delete:hover {
+  background-color: white;
+  color: #ff0000;
+  border: solid 2px #ff0000;
 }
 
 .btn-primary {
@@ -126,10 +152,6 @@ a {
   fill: #ff0000;
 }
 
-.nav-header {
-  margin-top: 50px;
-  margin-right: 50px;
-}
 .nav-header a {
   color: #004f71;
 }
@@ -137,14 +159,170 @@ a {
   width: 24px;
   height: 24px;
 }
-.nav-header input {
+.nav-header textarea {
+  height: 15vh;
+}
+
+input {
   border: none;
   width: 110px;
   background-color: #fbfbfb;
 }
-.nav-header input::-moz-placeholder {
+
+input {
+  border: none;
+  width: 110px;
+  background-color: #fbfbfb;
+}
+
+input::-moz-placeholder {
   color: #b6b6b6;
 }
-.nav-header input::placeholder {
+
+input::placeholder {
   color: #b6b6b6;
+}
+
+.content__send {
+  text-align: center;
+}
+.content__send button {
+  width: 22rem;
+}
+
+.container__suivi {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: 88vh;
+  padding: 0;
+}
+.container__suivi h3 {
+  color: #b6b6b6;
+  font-size: 1rem;
+}
+.container__suivi p {
+  color: #252525;
+  margin: 0;
+}
+.container__suivi .content__card {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  background: white;
+  border: 1px solid #f4f4f4;
+}
+.container__suivi .content__card span {
+  display: flex;
+  justify-content: space-between;
+  gap: 5%;
+}
+.container__suivi .content__card textarea {
+  height: 15vh;
+}
+.container__suivi .content__send {
+  text-align: center;
+}
+.container__suivi .content__send button {
+  width: 22rem;
+}
+
+input::-moz-placeholder {
+  color: #b6b6b6;
+}
+
+input::placeholder {
+  color: #b6b6b6;
+}
+
+.container__rdv .content__card span {
+  justify-content: flex-start;
+}
+.container__rdv .content__card span div {
+  display: flex;
+  width: 40%;
+}
+
+.containerMain {
+  height: calc(100% - 6rem);
+}
+
+.containerMain {
+  height: calc(100% - 6rem);
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 1.5rem;
+  overflow: auto;
+}
+table thead tr th {
+  padding-bottom: 1rem;
+  border-bottom: #f4f4f4 solid 1px;
+  text-align: left;
+  color: #b6b6b6;
+  font-weight: 500;
+}
+table tbody tr td {
+  text-align: left;
+}
+
+.nav-agents li {
+  background-color: white;
+  border: 1px solid #f4f4f4;
+}
+.nav-agents li:not(:first-child):before {
+  content: "•";
+  font-weight: bold;
+  display: inline-block;
+  width: 15px;
+}
+.nav-agents li:nth-child(2):before {
+  color: #e72424;
+}
+.nav-agents li:nth-child(2):before {
+  color: #e72424;
+}
+.nav-agents li:nth-child(3):before {
+  color: #50c83d;
+}
+.nav-agents li:nth-child(4):before {
+  color: #ff922e;
+}
+
+.containerMain {
+  height: calc(100% - 6rem);
+}
+
+.modal {
+  gap: 2rem;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  flex-direction: column;
+  width: 40%;
+  height: 35%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid #004f71;
+  border-radius: 1rem;
+}
+.modal h3 {
+  color: #004f71;
+}
+
+.colorCard {
+  background-color: #004f71 !important;
+  color: white;
+}
+
+#delete_btn {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  align-self: center;
 }/*# sourceMappingURL=styles.css.map */
