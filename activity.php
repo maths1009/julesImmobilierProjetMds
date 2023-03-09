@@ -1,5 +1,5 @@
 <?php
-include './components/head.php';
+include_once './components/head.php';
 ?>
 
 <body>

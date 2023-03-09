@@ -1,42 +1,23 @@
 <?php
-include_once("./config.php");
-// include_once("../classes/dbGestion.php");
-// $connect = new dbGestion("julesimmo", "users");
-$mysqli = new mysqli("localhost", "root", "root", "julesimmo");
+require_once "./config.php";
+require_once "./classes/dbGestion.php";
+
+$connect = new dbGestion();
 
 // Get user connect
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
-    $email = $_POST["email"];
-    $password = hash('sha256', $_POST["password"]);
-
-    $stmt = $mysqli->prepare('SELECT * FROM users WHERE email = ? AND password = ?');
-    $stmt->bind_param('ss', $email, $password);
-
-    $stmt->execute();
-
-    $result = $stmt->get_result();
-    $verif = $result->fetch_assoc();
+    $verif = $connect->login();
+    $connect->disconnect($connect->mysqli);
     if (isset($verif)) {
         $_SESSION['user'] = $verif;
-        header('Location: http://localhost:8888/julesImmobilierProjetMds/index.php');
+        header('Location: ' . SITE_ROOT . 'index.php');
     } else {
         $_SESSION['status'] = "L'email ou le mot de passe est invalide !";
     }
 }
+
+include_once './components/head.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/normalizeCSS.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-</head>
 
 <body>
     <main class="bg-login">
