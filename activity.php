@@ -8,6 +8,13 @@ if (!$mysqli) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+// get user role
+$stmt = $mysqli->prepare('SELECT * FROM roles WHERE id = ?');
+$stmt->bind_param('i', $_SESSION['user']['role_id']);
+$stmt->execute();
+$result = $stmt->get_result();
+$role = $result->fetch_assoc();
+
 // get meet
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -68,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <form class="container__suivi" method="POST">
                 <div class="title">
                     <h1>Suivi des agents immobiliers</h1>
-                    <h3>Agent immobilier</h3>
+                    <h3><?php echo ($role['name']) ?></h3>
                 </div>
 
                 <div class="content__card content__client rounded-3">
