@@ -43,7 +43,7 @@ h2 {
 .btn-delete {
   background-color: $alert;
   color: $tertiary;
-  &:hover{
+  &:hover {
     background-color: $tertiary;
     color: $alert;
     border: solid 2px $alert;
@@ -226,69 +226,67 @@ table {
 }
 
 .nav-agents {
-
-  li  {
+  li {
     background-color: $tertiary;
-    border: 1px solid #F4F4F4;
+    border: 1px solid #f4f4f4;
   }
-  
-  li:not(:first-child):before   {
+
+  li:not(:first-child):before {
     content: "•";
     font-weight: bold;
     display: inline-block;
     width: 15px;
   }
-  
+
   li:nth-child(2):before {
-    color: #E72424;
+    color: #e72424;
   }
-  
+
   li:nth-child(2):before {
-    color: #E72424;
+    color: #e72424;
   }
-  
+
   li:nth-child(3):before {
-    color: #50C83D;
+    color: #50c83d;
   }
-  
+
   li:nth-child(4):before {
-    color: #FF922E;
+    color: #ff922e;
   }
-  } 
-  
-  .containerMain{
-    height: calc(100% - 3rem *2);
-  }
+}
 
-  .modal{
-    gap: 2rem;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background: white;
-    flex-direction: column;
-    width: 40%;
-    height: 35%;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: solid $primary;
-    border-radius: 1rem;
-      & h3{
-        color: $primary;
-      }
-  }
+.containerMain {
+  height: calc(100% - 3rem * 2);
+}
 
-  .colorCard{
-    background-color: #004f71ab !important;
-    border: solid 2px $primary !important;
-    color: white;
+.modal {
+  gap: 2rem;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  flex-direction: column;
+  width: 40%;
+  height: 35%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid $primary;
+  border-radius: 1rem;
+  & h3 {
+    color: $primary;
   }
+}
 
-  #delete_btn{
-    display: flex;
-    justify-content: center;
-    width: 30%;
-    align-self: center;
-  }
+.colorCard {
+  background-color: $primary !important;
+  color: white;
+}
+
+#delete_btn {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  align-self: center;
+}

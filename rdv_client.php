@@ -1,54 +1,28 @@
 <?php
-include './components/head.php';
+include_once './components/head.php';
+require_once './classes/dbGestion.php';
 require_once './config.php';
 
-$mysqli = new mysqli("localhost", "root", "root", "julesimmo");
-
-if (!$mysqli) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+$mysqli = new dbGestion("meets");
 
 // get meet
-$stmt = $mysqli->prepare('SELECT * FROM meets WHERE id = ?');
-$stmt->bind_param('i', $_GET['id']);
-$stmt->execute();
-$result = $stmt->get_result();
-$meet = $result->fetch_assoc();
-// var_dump($meet);
+$meet = $mysqli->getMeetById($_GET['id']);
+
 
 // get client
-$stmt = $mysqli->prepare('SELECT * FROM clients WHERE id = ?');
-$stmt->bind_param('i', $meet['client_id']);
-$stmt->execute();
-$result = $stmt->get_result();
-$client = $result->fetch_assoc();
-// var_dump($client);
+$client = $mysqli->getClientById($meet['client_id']);
 
 // get agent
-$stmt = $mysqli->prepare('SELECT * FROM users WHERE id = ?');
-$stmt->bind_param('i', $meet['user_id']);
-$stmt->execute();
-$result = $stmt->get_result();
-$agent = $result->fetch_assoc();
-// var_dump($agent);
+$agent = $mysqli->getUserById($meet['user_id']);
 
 // get role
-$stmt = $mysqli->prepare('SELECT * FROM roles WHERE id = ?');
-$stmt->bind_param('i', $agent['role_id']);
-$stmt->execute();
-$result = $stmt->get_result();
-$role = $result->fetch_assoc();
-// var_dump($role);
-
+$role = $mysqli->getRoleById($agent['role_id']);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_meet'])) {
 
-    $stmt = $mysqli->prepare(' DELETE FROM meets WHERE id = ?');
-    $stmt->bind_param('i', $_POST['id_meet']);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    $mysqli->delete($_GET['id']);
     $_SESSION['status'] = "Le rendez-vous a bien été supprimé";
-    header('Location: http://localhost:8888/julesImmobilierProjetMds/index.php');
+    header('Location: ' . SITE_ROOT . 'index.php');
 }
 
 ?>
@@ -125,22 +99,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_meet'])) {
                     </div>
                 </form>
             </section>
-
-
         </main>
     </div>
-    <script>
-        const buttonDelete = document.querySelector('#delete_btn');
-        const annuleDelete = document.querySelector('#annule_delete');
-        buttonDelete.addEventListener("click", function(event) {
-            event.preventDefault();
-            document.querySelector(".modal").style.display = "flex";
-        })
-        annuleDelete.addEventListener("click", function(event) {
-            event.preventDefault();
-            document.querySelector(".modal").style.display = "none";
-        })
-    </script>
+    <script src="./assets/js/modal.js"></script>
 </body>
 
 </html>

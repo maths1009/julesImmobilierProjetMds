@@ -18,7 +18,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                     Dashboard
                 </a>
             </li>
-            <li class="<?= ($activePage == 'activity') ? 'activeNav' : ''; ?> d-flex justify-content-start">
+            <li class="<?= ($activePage == 'activity' || $activePage == 'rdv_client') ? 'activeNav' : ''; ?> d-flex justify-content-start">
                 <a href="./activity.php" class="nav-link fw-semibold d-flex align-items-center gap-3 ps-4 py-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16">
                         <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
@@ -28,7 +28,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                 </a>
             </li>
             <?php
-            if ($_SESSION['user']['role_id'] == 1) {
+            if ($_SESSION['user']['role_id'] == 1 || $_SESSION['user']['role_id'] == 3) {
             ?>
                 <li class="<?= ($activePage == 'agents') ? 'activeNav' : ''; ?> d-flex justify-content-start">
                     <a href="./agents.php" class="nav-link fw-semibold d-flex align-items-center gap-3 ps-4 py-3">

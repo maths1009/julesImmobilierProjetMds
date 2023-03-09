@@ -7,16 +7,19 @@ $sql = new dbGestion();
 $id = $_SESSION['user']['id'];
 
 // get user role
-$role = $sql->getRoleById($id);
+$role =  $sql->getRoleById($id);
 
 // get total number of meets
-$totalMeets = $sql->getMeetsById($id);
+$totalMeets =
+  $_SESSION['user']['role_id'] == 1 ||  $_SESSION['user']['role_id'] == 2 ? $sql->selectAll('roles') : $sql->getMeetsUserById($id);
 
 // get all meets 7 last days
-$meets7Days = $sql->getMeetRecentById($id);
+$meets7Days =
+  $_SESSION['user']['role_id'] == 1 ||  $_SESSION['user']['role_id'] == 2 ? $sql->selectAll('meets') : $sql->getMeetRecentById($id);
 
 // get total number client 
-$totalClients = $sql->getClientByIdUser($id);
+$totalClients =
+  $_SESSION['user']['role_id'] == 1 ||  $_SESSION['user']['role_id'] == 2 ? $sql->selectAll('clients') : $sql->getClientByIdUser($id);
 ?>
 
 <body>

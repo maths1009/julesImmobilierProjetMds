@@ -270,7 +270,7 @@ table tbody tr td {
 
 .nav-agents li {
   background-color: white;
-  border: 1px solid #F4F4F4;
+  border: 1px solid #f4f4f4;
 }
 .nav-agents li:not(:first-child):before {
   content: "•";
@@ -279,16 +279,16 @@ table tbody tr td {
   width: 15px;
 }
 .nav-agents li:nth-child(2):before {
-  color: #E72424;
+  color: #e72424;
 }
 .nav-agents li:nth-child(2):before {
-  color: #E72424;
+  color: #e72424;
 }
 .nav-agents li:nth-child(3):before {
-  color: #50C83D;
+  color: #50c83d;
 }
 .nav-agents li:nth-child(4):before {
-  color: #FF922E;
+  color: #ff922e;
 }
 
 .containerMain {
@@ -316,8 +316,7 @@ table tbody tr td {
 }
 
 .colorCard {
-  background-color: rgba(0, 79, 113, 0.6705882353) !important;
-  border: solid 2px #004f71 !important;
+  background-color: #004f71 !important;
   color: white;
 }
 

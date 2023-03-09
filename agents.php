@@ -10,12 +10,12 @@ $id = $_SESSION['user']['id'];
 $role = $mysqli->getRoleById($id);
 
 // get agents
-$agents = $mysqli->getAgentsById($id);
+$agents = $mysqli->getAgentsByManagerId($id);
 
 // get total number of meets
 $totalMeets = 0;
 foreach ($agents as $key => $agent) {
-    $total = $mysqli->getMeetsById($agent['id']);
+    $total = $mysqli->getMeetsUserById($agent['id']);
     $totalMeets += count($total);
 }
 
@@ -43,7 +43,7 @@ foreach ($agents as $key => $agent) {
             <?php require './components/header.php' ?>
 
             <?php
-            $result = $mysqli->getAgentsById($id);
+            $result = $mysqli->getAgentsByManagerId($id);
             ?>
             <ul class="d-flex list-unstyled nav-agents gap-3">
                 <li class="w-25 p-3 text-center rounded-4 colorCard">

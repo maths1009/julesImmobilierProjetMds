@@ -2,7 +2,8 @@
 include './components/head.php';
 require_once './config.php';
 
-$mysqli = new mysqli("localhost", "root", "root", "julesimmo");
+$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$mysqli->set_charset("utf8mb4");
 
 if (!$mysqli) {
     die("Connection failed: " . mysqli_connect_error());
@@ -53,6 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+$mysqli->close();
 ?>
 
 <body>

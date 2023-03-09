@@ -46,9 +46,9 @@ class dbGestion
      * 
      * @return The result of the query.
      */
-    public function selectAll()
+    public function selectAll($table)
     {
-        $result = $this->mysqli->query("SELECT * FROM " . $this->dbTable);
+        $result = $this->mysqli->query("SELECT * FROM " . $table);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
@@ -62,6 +62,12 @@ class dbGestion
     {
         $result = $this->mysqli->query('SELECT * FROM users WHERE email = "' . $_POST['email'] . '" AND password = "' . hash('sha256', $_POST["password"]) . '"');
         return $result->fetch_assoc();
+    }
+
+    public function getClientByEmail($email)
+    {
+        $result = $this->mysqli->query('SELECT * FROM clients WHERE email = ' . $email);
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
 
@@ -86,10 +92,23 @@ class dbGestion
      * 
      * @return An array of associative arrays.
      */
-    public function getMeetsById($id)
+    public function getMeetsUserById($id)
     {
         $result = $this->mysqli->query('SELECT * FROM meets WHERE user_id = ' . $id);
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    /**
+     * > Get a meet by its id
+     * 
+     * @param id The id of the meet you want to get.
+     * 
+     * @return An associative array of the meet with the given id.
+     */
+    public function getMeetById($id)
+    {
+        $result = $this->mysqli->query('SELECT * FROM meets WHERE id = ' . $id);
+        return $result->fetch_assoc();
     }
 
     /**
@@ -139,7 +158,7 @@ class dbGestion
      * 
      * @return An array of associative arrays.
      */
-    public function getAgentsById($id)
+    public function getAgentsByManagerId($id)
     {
         $result = $this->mysqli->query('SELECT * FROM users WHERE manager_user_id = ' . $id);
         return $result->fetch_all(MYSQLI_ASSOC);
@@ -158,8 +177,8 @@ class dbGestion
      */
     public function delete($id)
     {
-        $this->mysqli->execute("DELETE FROM " . $this->dbTable . " WHERE id = ? ");
-        $this->mysqli->bind_param("i", $id);
-        $this->disconnect($this->mysqli);
+        $result = $this->mysqli->prepare("DELETE FROM " . $this->dbTable . " WHERE id = ? ");
+        $result->bind_param("i", $id);
+        $result->execute();
     }
 }
