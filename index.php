@@ -11,7 +11,7 @@ $role =  $sql->getRoleById($id);
 
 // get total number of meets
 $totalMeets =
-  $_SESSION['user']['role_id'] == 1 ||  $_SESSION['user']['role_id'] == 2 ? $sql->selectAll('roles') : $sql->getMeetsUserById($id);
+  $_SESSION['user']['role_id'] == 1 ||  $_SESSION['user']['role_id'] == 2 ? $sql->selectAll('meets') : $sql->getMeetsUserById($id);
 
 // get all meets 7 last days
 $meets7Days =

@@ -1,5 +1,4 @@
 <?php
-include './components/head.php';
 require_once './config.php';
 
 $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -55,6 +54,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $mysqli->close();
+
+include './components/head.php';
 ?>
 
 <body>
