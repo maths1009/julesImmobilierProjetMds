@@ -1,5 +1,4 @@
 <?php
-include_once './components/head.php';
 require_once './classes/dbGestion.php';
 require_once './config.php';
 
@@ -25,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_meet'])) {
     header('Location: ' . SITE_ROOT . 'index.php');
 }
 
+include_once './components/head.php';
 ?>
 
 <body>
