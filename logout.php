@@ -1,7 +1,8 @@
 <?php
 require_once './config.php';
 
-$_SESSION = array();
+/* Destroying the session and redirecting the user to the login page. */
+$_SESSION = null;
 session_destroy();
-header('Location: ./login.php');
+header('Location: ' . SITE_ROOT . 'login.php');
 exit;
