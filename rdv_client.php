@@ -115,23 +115,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_meet'])) {
                     <h2>Commentaires :</h2>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $meet['comment'] ?></p>
                 </div>
+                <button id="delete_btn" class="btn btn-delete btn-lg btn-block">Supprimer</button>
+                <form class="modal" method="POST">
+                    <h3>Êtes-vous sûr de vouloir supprimer ce rendez-vous ?</h3>
+                    <input type="hidden" name="id_meet" id="id_meet" value="<?php echo $meet['id'] ?>">
+                    <div>
+                        <button id="delete_meet" class="btn btn-primary btn-lg btn-block" type="submit" name="delete_meet">Oui</button>
+                        <button id="annule_delete" class="btn btn-primary btn-lg btn-block">Non</button>
+                    </div>
+                </form>
             </section>
-            <div class="content__send">
-                <button id="delete_btn" class="btn btn-primary btn-lg btn-block">Supprimer</button>
-            </div>
-            <form class="modal" method="POST">
-                <h3>Êtes-vous sûr de vouloir supprimer ce rendez-vous ?</h3>
-                <input type="hidden" name="id_meet" id="id_meet" value="<?php echo $meet['id'] ?>">
-                <button id="delete_meet" class="btn btn-primary btn-lg btn-block" type="submit" name="delete_meet">Oui</button>
-                <button id="annul_delete" class="btn btn-primary btn-lg btn-block">Non</button>
-            </form>
+
+
         </main>
     </div>
     <script>
         const buttonDelete = document.querySelector('#delete_btn');
+        const annuleDelete = document.querySelector('#annule_delete');
         buttonDelete.addEventListener("click", function(event) {
             event.preventDefault();
             document.querySelector(".modal").style.display = "flex";
+        })
+        annuleDelete.addEventListener("click", function(event) {
+            event.preventDefault();
+            document.querySelector(".modal").style.display = "none";
         })
     </script>
 </body>

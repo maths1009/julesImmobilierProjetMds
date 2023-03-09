@@ -90,7 +90,11 @@ h2 {
 .btn-delete {
   background-color: #ff0000;
   color: white;
-  border: #ff0000;
+}
+.btn-delete:hover {
+  background-color: white;
+  color: #ff0000;
+  border: solid 2px #ff0000;
 }
 
 .btn-primary {
@@ -189,7 +193,7 @@ input::placeholder {
 .container__suivi {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 3rem;
   height: 88vh;
   padding: 0;
 }
@@ -292,5 +296,34 @@ table tbody tr td {
 }
 
 .modal {
+  gap: 2rem;
   display: none;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  flex-direction: column;
+  width: 40%;
+  height: 35%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid #004f71;
+  border-radius: 1rem;
+}
+.modal h3 {
+  color: #004f71;
+}
+
+.colorCard {
+  background-color: rgba(0, 79, 113, 0.6705882353) !important;
+  border: solid 2px #004f71 !important;
+  color: white;
+}
+
+#delete_btn {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  align-self: center;
 }/*# sourceMappingURL=styles.css.map */
